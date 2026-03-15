@@ -11,6 +11,9 @@ class Simulation:
         screen = pygame.display.set_mode((self.WindowWidth, self.WindowHeight))
         clock = pygame.time.Clock()
         world = World(screen, self.WindowWidth / 2, self.WindowHeight / 2)
+        
+        background = pygame.image.load("assets/Pictures/milkyway.jpg")
+        background = pygame.transform.scale(background, (self.WindowWidth, self.WindowHeight))
         running = True
 
         while running:
@@ -18,7 +21,8 @@ class Simulation:
                 if event.type == pygame.QUIT:
                     running = False
                    
-            screen.fill("black")
+            #screen.blit(background, (0,0))
+            screen.fill("#0C0C0C")
             
             dt = clock.tick(self.FPS) / 1000
             world.update(dt)

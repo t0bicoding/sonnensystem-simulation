@@ -1,20 +1,29 @@
 import pygame # pyright: ignore[reportMissingImports]
 import math
+import json
 
 class Planet:
-    def __init__(self, color, x_pos, y_pos, radius, center_x, 
-                 center_y, orbit_radius, orbit_speed):
-        self.color = color
-        self.x_pos = x_pos
-        self.y_pos = y_pos
-        self.radius = radius
+    def __init__(self, center_x, center_y, name):
+        
+        with open("data/planets.json") as f:
+            data = json.load(f)
+        planet = data[name]
+        
+        with open("data/orbits.json") as f:
+            data = json.load(f)    
+        orbits = data["planets"]
+
+        self.x_pos = center_x - planet["distance"]
+        self.y_pos = center_y
+        self.color = planet["color"]
+        self.radius = planet["radius"]
+        self.orbit_speed = planet["orbit_speed"] / 10
         
         self.center_x = center_x
         self.center_y = center_y
-        self.border_thickness = 1
-        self.border_color = "grey"
-        self.orbit_radius = orbit_radius
-        self.orbit_speed = orbit_speed
+        self.border_thickness = orbits["thickness"]
+        self.border_color = orbits["color"]
+        self.orbit_radius = planet["distance"]
         self.angle = 0.0
         
 

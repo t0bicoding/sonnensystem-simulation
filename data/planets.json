@@ -1,16 +1,57 @@
 {
-    "earth":{
-        "color": [240,155,89],
-        "radius": 20
-    },
-
     "mercury":{
-        "color": [128,128,128],
-        "radius": 10
+        "color": "#8C8887",
+        "radius": 6,
+        "distance": 58,
+        "orbit_speed": 47.9
     },
 
     "venus":{
-        "color": [235,113,16],
-        "radius": 15
+        "color": "#CC8C2A",
+        "radius": 12,
+        "distance": 108,
+        "orbit_speed": 35
+    },
+
+    "earth":{
+        "color": "#7EA628",
+        "radius": 15,
+        "distance": 149.6,
+        "orbit_speed": 29.8
+    },
+
+    "mars":{
+        "color": "#B72E1C",
+        "radius": 12,
+        "distance": 200,
+        "orbit_speed": 24.1
+    },
+
+    "jupiter":{
+        "color": "#B69B7D",
+        "radius": 20,
+        "distance": 280,
+        "orbit_speed": 13.1
+    },
+
+    "saturn":{
+        "color": "#B69B7D",
+        "radius": 10,
+        "distance": 350,
+        "orbit_speed": 9.7
+    },
+
+    "uranus":{
+        "color": "#628FA2",
+        "radius": 14,
+        "distance": 400,
+        "orbit_speed": 6.8
+    },
+
+    "neptun":{
+        "color": "#466CFD",
+        "radius": 16,
+        "distance": 480,
+        "orbit_speed": 5.4
     }
 }

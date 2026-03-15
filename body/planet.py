@@ -1,5 +1,5 @@
 import pygame # pyright: ignore[reportMissingImports]
-import json
+import math
 
 class Planet:
     def __init__(self, color, x_pos, y_pos, radius, center_x, 
@@ -14,7 +14,8 @@ class Planet:
         self.border_thickness = 1
         self.border_color = "grey"
         self.orbit_radius = orbit_radius
-        self.orbit_speed = 1
+        self.orbit_speed = 0.7
+        self.angle = 0.0
         
 
     def draw(self, screen):
@@ -31,4 +32,6 @@ class Planet:
                            self.radius)
         
     def update(self, dt):
-        dt = dt
+        self.angle += self.orbit_speed * dt
+        self.x_pos = self.center_x + math.cos(self.angle) * self.orbit_radius
+        self.y_pos = self.center_y + math.sin(self.angle) * self.orbit_radius

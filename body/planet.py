@@ -16,7 +16,7 @@ class Planet:
         self.x_pos = center_x - planet["distance"]
         self.y_pos = center_y
         self.color = planet["color"]
-        self.radius = planet["radius"]
+        self.radius = planet["radius"] 
         self.orbit_speed = planet["orbit_speed"] / 10
         
         self.center_x = center_x
@@ -27,18 +27,22 @@ class Planet:
         self.angle = 0.0
         
 
-    def draw(self, screen):
+    def draw(self, screen, camera):
         # Planet Orbit
-        pygame.draw.circle(screen, 
-                           self.border_color, 
-                           (self.center_x, self.center_y), 
-                           self.orbit_radius, 
+        center = camera.apply(self.center_x, self.center_y)
+        orbit_radius = camera.apply_radius(self.orbit_radius)
+        pygame.draw.circle(screen,
+                           self.border_color,
+                           center,
+                           orbit_radius,
                            self.border_thickness)
         # Planet
-        pygame.draw.circle(screen, 
-                           self.color, 
-                           (self.x_pos, self.y_pos), 
-                           self.radius)
+        pos = camera.apply(self.x_pos, self.y_pos)
+        radius = camera.apply_radius(self.radius)
+        pygame.draw.circle(screen,
+                           self.color,
+                           pos,
+                           radius)
         
     def update(self, dt):
         self.angle += self.orbit_speed * dt

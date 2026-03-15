@@ -7,5 +7,7 @@ class Star:
         self.y_pos = y_pos
         self.radius = radius
     
-    def draw(self, screen):
-        pygame.draw.circle(screen, self.color, (self.x_pos, self.y_pos), self.radius)
+    def draw(self, screen, camera):
+        pos = camera.apply(self.x_pos, self.y_pos)
+        radius = camera.apply_radius(self.radius)
+        pygame.draw.circle(screen, self.color, pos, radius)

@@ -20,16 +20,16 @@ class World:
         self.uranus = Planet(center_x, center_y, "uranus")
         self.neptun = Planet(center_x, center_y, "neptun")
         
-    def draw(self):
-        self.star.draw(self.screen)
-        self.mercury.draw(self.screen)
-        self.venus.draw(self.screen)
-        self.earth.draw(self.screen)
-        self.mars.draw(self.screen)
-        self.jupiter.draw(self.screen)
-        self.saturn.draw(self.screen)
-        self.uranus.draw(self.screen)
-        self.neptun.draw(self.screen)
+    def draw(self, camera):
+        self.star.draw(self.screen, camera)
+        self.mercury.draw(self.screen, camera)
+        self.venus.draw(self.screen, camera)
+        self.earth.draw(self.screen, camera)
+        self.mars.draw(self.screen, camera)
+        self.jupiter.draw(self.screen, camera)
+        self.saturn.draw(self.screen, camera)
+        self.uranus.draw(self.screen, camera)
+        self.neptun.draw(self.screen, camera)
     
     def update(self, dt):
         self.earth.update(dt)

@@ -16,11 +16,18 @@ class World:
         self.star = Star(sun["color"], center_x, center_y, sun["radius"])
         
         earth = planets_data["earth"]
-        self.earth = Planet(earth["color"], center_x - 300, center_y, earth["radius"])
-        self.earth_orbit = Orbit("grey", center_x, center_y, 300, 1)
+        self.earth = Planet(earth["color"], 
+                            center_x - 300, 
+                            center_y, 
+                            earth["radius"], 
+                            center_x, 
+                            center_y,
+                            300)
         
     def draw(self):
         self.star.draw(self.screen)
-        self.earth_orbit.draw(self.screen)
         self.earth.draw(self.screen)
+    
+    def update(self, dt):
+        self.earth.update(dt)
         

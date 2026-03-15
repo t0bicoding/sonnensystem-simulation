@@ -19,6 +19,9 @@ class Simulation:
                     running = False
                    
             screen.fill("black")
+            
+            dt = clock.tick(self.FPS) / 1000
+            world.update(dt)
             world.draw()
             
             pygame.display.flip()

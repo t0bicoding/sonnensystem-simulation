@@ -17,7 +17,7 @@ class Planet:
         self.y_pos = center_y
         self.color = planet["color"]
         self.radius = planet["radius"] 
-        self.orbit_speed = planet["orbit_speed"] / 10
+        self.orbit_speed = planet["orbit_speed"] / 25
         
         self.center_x = center_x
         self.center_y = center_y

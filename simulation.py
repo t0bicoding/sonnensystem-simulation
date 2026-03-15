@@ -14,7 +14,7 @@ class Simulation:
         camera = Camera(self.WindowWidth, self.WindowHeight)
         world = World(screen, self.WindowWidth / 2, self.WindowHeight / 2)
 
-        background = pygame.image.load("assets/Pictures/milkyway.jpg")
+        background = pygame.image.load("assets/Pictures/milky_way.jpg")
         background = pygame.transform.scale(background, (self.WindowWidth, self.WindowHeight))
         running = True
 
@@ -24,8 +24,8 @@ class Simulation:
                     running = False
                 camera.handle_event(event)
 
-            #screen.blit(background, (0,0))
-            screen.fill("#0C0C0C")
+            screen.blit(background, (0,0))
+            #screen.fill("#0C0C0C")
 
             dt = clock.tick(self.FPS) / 1000
             world.update(dt)

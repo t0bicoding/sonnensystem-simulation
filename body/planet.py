@@ -3,7 +3,7 @@ import math
 
 class Planet:
     def __init__(self, color, x_pos, y_pos, radius, center_x, 
-                 center_y, orbit_radius):
+                 center_y, orbit_radius, orbit_speed):
         self.color = color
         self.x_pos = x_pos
         self.y_pos = y_pos
@@ -14,7 +14,7 @@ class Planet:
         self.border_thickness = 1
         self.border_color = "grey"
         self.orbit_radius = orbit_radius
-        self.orbit_speed = 0.7
+        self.orbit_speed = orbit_speed
         self.angle = 0.0
         
 
